@@ -323,7 +323,7 @@
   }
   @keyframes fill-xp{
     from{width:0%}
-    to{width:87%}
+    to{width:96%}
   }
 
   /* CTAs */
@@ -809,6 +809,29 @@
   }
   .ach.gold .ach-icon{background:linear-gradient(135deg, var(--amber), var(--legendary))}
   .ach.platinum .ach-icon{background:linear-gradient(135deg, var(--cyan), var(--rare))}
+  .ach.mythic .ach-icon{
+    background:linear-gradient(135deg, var(--magenta) 0%, var(--legendary) 50%, var(--neon) 100%);
+    animation:mythic-glow 3s ease-in-out infinite;
+  }
+  .ach.mythic{
+    border-color:rgba(255,60,140,0.35);
+    background:linear-gradient(180deg, var(--bg-2) 0%, rgba(255,60,140,0.04) 100%);
+  }
+  .ach.mythic::before{
+    content:'NEW';
+    position:absolute;
+    top:10px;right:10px;
+    font-size:8px;
+    letter-spacing:0.2em;
+    padding:2px 6px;
+    background:var(--magenta);
+    color:var(--bg);
+    font-weight:700;
+  }
+  @keyframes mythic-glow{
+    0%,100%{box-shadow:0 0 0 rgba(255,60,140,0)}
+    50%{box-shadow:0 0 18px rgba(255,60,140,0.4)}
+  }
   .ach-title{
     font-family:'Fraunces',serif;
     font-size:17px;
@@ -832,6 +855,8 @@
   .ach-rarity::before{content:'◆'}
   .ach.platinum .ach-rarity{color:var(--rare)}
   .ach.platinum .ach-rarity::before{content:'◆◆'}
+  .ach.mythic .ach-rarity{color:var(--magenta)}
+  .ach.mythic .ach-rarity::before{content:'★★★'}
 
   /* === CONTACT (SAVE POINT) === */
   .save-point{
@@ -1022,7 +1047,7 @@
     <span class="hud-item hide-sm">LOC: <strong>BANGALORE.IN</strong></span>
   </div>
   <div class="hud-right">
-    <span class="hud-item hide-sm">XP: <strong>12,847</strong></span>
+    <span class="hud-item hide-sm">XP: <strong>14,247</strong></span>
     <span class="hud-item hide-sm">QUESTS: <strong>04</strong></span>
     <span class="hud-clock" id="clock">--:--:--</span>
   </div>
@@ -1060,7 +1085,7 @@
         <div class="xp-progress">
           <div class="xp-label">
             <span>Experience</span>
-            <span>12,847 / 14,800 XP</span>
+            <span>14,247 / 14,800 XP</span>
           </div>
           <div class="xp-bar"><div class="xp-fill"></div></div>
         </div>
@@ -1103,7 +1128,7 @@
       </div>
       <div class="stat">
         <div class="stat-label">Awards Unlocked</div>
-        <div class="stat-value" data-count="2">0</div>
+        <div class="stat-value" data-count="5">0</div>
         <div class="stat-sub">Industry recognition</div>
       </div>
     </div>
@@ -1131,7 +1156,7 @@
         </div>
         <div class="quest-tagline">Virtual Substation // Protection &amp; Control</div>
         <p class="quest-desc">
-          Team Architect for Siemens' next-gen virtual substation protection platform. Scaling up to 60 IEDs on a single server with proven algorithms, IEC 61850 compliance, and an AI-ready architecture layer enabling intelligent diagnostics.
+          Team Architect for Siemens' next-gen virtual substation protection platform. Scaling up to 60 IEDs on a single server with proven algorithms, IEC 61850 compliance, and an AI-ready architecture layer enabling intelligent diagnostics. 🏆 <strong style="color:var(--magenta)">Elevate Award 2026</strong> — Technology with Purpose.
         </p>
         <div class="quest-meta">
           <div class="quest-meta-item">
@@ -1164,7 +1189,7 @@
         </div>
         <div class="quest-tagline">Fully Autonomous Software Transformation</div>
         <p class="quest-desc">
-          Conceived and architected an AI-powered autonomous development lifecycle system — automating requirements, design, code-gen, testing, and deployment end-to-end. Multi-agent orchestration + RAG + MCP on Azure AI Foundry.
+          Conceived and architected an AI-powered autonomous development lifecycle system — automating requirements, design, code-gen, testing, and deployment end-to-end. Multi-agent orchestration + RAG + MCP on Azure AI Foundry. 🏆 <strong style="color:var(--magenta)">FT Transformation Award 2025</strong> — Customer Focus.
         </p>
         <div class="quest-meta">
           <div class="quest-meta-item">
@@ -1376,11 +1401,11 @@
           <h3>Software <em>Architect</em></h3>
           <div class="log-company">Siemens Technology Services</div>
           <p class="log-desc">
-            Team Architect for SIPROTEC V. Creator of FAST — AI-powered SDLC automation with multi-agent orchestration, RAG pipelines, and MCP on Azure AI Foundry. Previously led DIGSI 5 engineering from developer to architect. 🏆 Instant Puraskar Award for usability &amp; performance contributions.
+            Team Architect for SIPROTEC V. Creator of FAST — AI-powered SDLC automation with multi-agent orchestration, RAG pipelines, and MCP on Azure AI Foundry. Previously led DIGSI 5 engineering from developer to architect. 🏆 <strong style="color:var(--magenta)">Elevate Award 2026</strong> (SIPROTEC V), <strong style="color:var(--magenta)">FT Transformation Award 2025</strong> (FAST), <strong style="color:var(--magenta)">LEAD Award 2024</strong>, &amp; Instant Puraskar.
           </p>
         </div>
         <div class="log-xp">
-          +9,500<br>
+          +10,900<br>
           <strong>XP</strong>
         </div>
       </div>
@@ -1425,11 +1450,29 @@
         <h2 class="section-title">Unlocked <em>achievements</em></h2>
       </div>
       <div class="section-meta">
-        Total unlocked<br><strong>04 / 04</strong>
+        Total unlocked<br><strong>07 / 07</strong>
       </div>
     </div>
 
     <div class="achievements">
+      <div class="ach mythic">
+        <div class="ach-icon">🚀</div>
+        <div class="ach-title">Elevate Award 2026</div>
+        <div class="ach-desc">Siemens SGI-level award — "Technology with Purpose" category for SIPROTEC V.</div>
+        <div class="ach-rarity">Mythic</div>
+      </div>
+      <div class="ach mythic">
+        <div class="ach-icon">⚡</div>
+        <div class="ach-title">FT Transformation Award 2025</div>
+        <div class="ach-desc">Siemens award — "Customer Focus" category for FAST (Autonomous SDLC).</div>
+        <div class="ach-rarity">Mythic</div>
+      </div>
+      <div class="ach mythic">
+        <div class="ach-icon">🎖️</div>
+        <div class="ach-title">LEAD Award 2024</div>
+        <div class="ach-desc">Siemens SGI EA — "Impactful" category. Lead, Excel, Accelerate &amp; Dream.</div>
+        <div class="ach-rarity">Mythic</div>
+      </div>
       <div class="ach gold">
         <div class="ach-icon">🏆</div>
         <div class="ach-title">Instant Puraskar</div>
